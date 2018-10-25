@@ -7,7 +7,7 @@ class Application
     if req.path.match(/items/)
       item_name = req.path.split("/items/").last
       item = Item.find{|i| i.name == item_name}
-      resp.write "You requested"
+      resp.write "You requested #{item}"
     else
       resp.write "Route not found"
       resp.status = 404
