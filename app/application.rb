@@ -1,3 +1,4 @@
+require 'pry'
 class Application
 
   def call(env)
@@ -8,10 +9,11 @@ class Application
       item_name = req.path.split("/items/").last
       item = @@items.find{|i| i.name == item_name}
         if item
-        resp.write "You requested #{item.price}"
+          resp.write "You requested #{item.price}"
         else
           resp.write "Route not found"
           resp.status = 404
+          binding.pry
         end
       end
 
