@@ -10,12 +10,12 @@ class Application
       if item != nil
           resp.write "You requested #{item.price}"
       elsif item == nil
-          resp.write "Route not found"
+          resp.write "Item not found"
           resp.status = 404
         end
       else
         resp.write "Route not found"
-        resp.status = 404 
+        resp.status = 404
       end
 
     resp.finish
