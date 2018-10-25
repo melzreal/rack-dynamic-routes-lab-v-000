@@ -10,7 +10,7 @@ class Application
       if item.empty?
         resp.write "Route not found"
         resp.status = 404
-      elsif !item.empty?
+      elsif
         resp.write "You requested #{item.price}"
       else
         resp.write "Route not found"
