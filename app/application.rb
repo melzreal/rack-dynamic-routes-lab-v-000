@@ -6,7 +6,7 @@ class Application
 
     if req.path.match(/items/)
       item_name = req.path.split("/items/").last
-      item = Item.find{|i| i.name == item_name}
+      item = Item.find{|i| i.price == item_name}
       resp.write "You requested #{item}"
     else
       resp.write "Route not found"
